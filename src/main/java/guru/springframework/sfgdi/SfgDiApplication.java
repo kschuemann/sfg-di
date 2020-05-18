@@ -13,10 +13,10 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
-		MyController myController = (MyController) context.getBean("myController"); // Spring creating stereotype-object
 
-		String greeting = myController.sayHello();
-		System.out.println(greeting);
+		System.out.println("------------primary-bean-----------");
+		MyController myController = (MyController) context.getBean("myController"); // Spring creating stereotype-object
+		System.out.println(myController.sayHello());
 
 		System.out.println("--------------property-------------");
 
