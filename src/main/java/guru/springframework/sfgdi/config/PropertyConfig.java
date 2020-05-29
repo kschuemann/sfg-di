@@ -10,10 +10,6 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfig {
 
     @Value("${sfgdi.username}")
@@ -46,12 +42,6 @@ public class PropertyConfig {
         fakeJmsBroker.setPassword(jmdPassword);
         fakeJmsBroker.setUrl(jmdUrl);
         return fakeJmsBroker;
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties(){
-        PropertySourcesPlaceholderConfigurer placeholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return placeholderConfigurer;
     }
 
 }
